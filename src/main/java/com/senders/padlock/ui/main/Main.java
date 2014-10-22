@@ -1,15 +1,25 @@
 package com.senders.padlock.ui.main;
 
-import com.senders.padlock.ui.main.screens.Login;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-public class Main {
-    public void start(){
-       new Login(this).start();
+public class Main extends Application {
 
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        primaryStage.setTitle("Padlock");
+        Parent root = FXMLLoader.load(getClass().getResource
+                ("/login.fxml"));
+        Scene myScene = new Scene(root,250, 250);
+        primaryStage.setScene(myScene);
+        primaryStage.setResizable(false);
+        primaryStage.show();
     }
 
-    public static void main(String[] args){
-        new Main().start();
-
+    public static void main(String[] args) {
+        launch(args);
     }
 }
