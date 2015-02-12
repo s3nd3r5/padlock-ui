@@ -40,10 +40,6 @@
     -fx-spacing: 5px;
     -fx-alignment: center;
 }
-.loginTextField.readonly{
-    -fx-text-fill: #fff;
-    -fx-prompt-text-fill: #ffffff;
-}
 
 .loginLabel{
     -fx-alignment: center;
@@ -57,6 +53,11 @@
 #loginBottom{
     -fx-background-color: #373737;
 }
-#loginTop{
+#loginTop {
     -fx-background-color: #464646;
+}
+
+.disabledLoginTextField{
+    -fx-background-color: #797979;
+    -fx-text-fill: #e8e8e8;
 }

@@ -13,7 +13,9 @@ public class Main extends Application {
         primaryStage.setTitle("Padlock");
         Parent root = FXMLLoader.load(getClass().getResource
                 ("/login.fxml"));
+
         Scene myScene = new Scene(root,250, 250);
+
         primaryStage.setScene(myScene);
         primaryStage.setResizable(false);
         primaryStage.show();

@@ -5,24 +5,25 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.layout.FlowPane?>
-<BorderPane stylesheets="login.css" styleClass="loginFrame">
+<BorderPane fx:id="root" stylesheets="login.css" styleClass="loginFrame" fx:controller="com.senders.padlock.ui.main.controllers.LoginController"
+            xmlns:fx="http://javafx.com/fxml">
     <top>
         <FlowPane  styleClass="loginPanel" id="loginTop">
-            <Label styleClass="loginHeading" text="Padlock Login"/>
+            <Label styleClass="loginHeading" text="Padlock UI"/>
         </FlowPane>
     </top>
     <center>
         <VBox styleClass="loginPanel" id="loginCenter">
-            <PasswordField styleClass="loginTextField" promptText="Password to file"/>
-            <PasswordField styleClass="loginTextField" promptText="Secret for file"/>
-            <TextField styleClass="loginTextField" promptText="Location of file" disable="true"/>
-            <Button text="Change File" styleClass="loginButton"/>
+            <PasswordField fx:id="passwordField" styleClass="loginTextField" promptText="Password to file"/>
+            <PasswordField fx:id="secretField" styleClass="loginTextField" promptText="Secret for file"/>
+            <TextField fx:id="fileField" styleClass="disabledLoginTextField" promptText="Location of file" editable="false"/>
+            <Button fx:id="changeFileButton" text="Change File" styleClass="loginButton" onAction="#changeFile"/>
         </VBox>
     </center>
     <bottom>
         <HBox styleClass="loginPanel" id="loginBottom">
-            <Button text="Login" styleClass="loginButton"/>
-            <Button text="Cancel" styleClass="loginButton"/>
+            <Button text="Login" styleClass="loginButton" onAction="#login"/>
+            <Button text="Cancel" styleClass="loginButton" onAction="#closeApp"/>
         </HBox>
     </bottom>
 </BorderPane>
